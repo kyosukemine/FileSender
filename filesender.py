@@ -4,20 +4,20 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "<html><h3>実習資料</h3><a href='/export/raspberrypi'>ダウンロード RaspberryPi用</a><br><br><br><br><a href='/export/pc'>ダウンロード PC用</a></html>"
+    return "<html><h>ダウンロードファイル</h3><a href='/export/file1'>ダウンロード ファイル１</a><br><br><br><br><a href='/export/file2'>ダウンロード ファイル２</a></html>"
 
 
-@app.route("/export/raspberrypi")
+@app.route("/export/file1")
 def export_action_raspi():
-    filename = "./DX_raspi.zip"#"送りたいファイルのパス/ラズパイ用"
+    filename = "./file1.zip"#"送りたいファイルのパス/ファイル１"
     return send_file(
         filename,
         as_attachment=True
     )
 
-@app.route("/export/pc")
+@app.route("/export/file2")
 def export_action_pc():
-    filename = "./DX_PC.zip"#"送りたいファイルのパス/パソコン用"
+    filename = "./file2.zip"#"送りたいファイルのパス/ファイル２"
     return send_file(
         filename,
         as_attachment=True
