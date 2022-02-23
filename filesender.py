@@ -2,6 +2,7 @@ from flask import Flask, send_file
 app = Flask(__name__)
 
 
+
 @app.route('/')
 def index():
     return "<html><h>ダウンロードファイル</h3><a href='/export/file1'>ダウンロード ファイル１</a><br><br><br><br><a href='/export/file2'>ダウンロード ファイル２</a></html>"
@@ -9,17 +10,17 @@ def index():
 
 @app.route("/export/file1")
 def export_action_raspi():
-    filename = "./file1.zip"#"送りたいファイルのパス/ファイル１"
+    filepath = "./file1.zip"#"送りたいファイルのパス/ファイル１"
     return send_file(
-        filename,
+        filepath,
         as_attachment=True
     )
 
 @app.route("/export/file2")
 def export_action_pc():
-    filename = "./file2.zip"#"送りたいファイルのパス/ファイル２"
+    filepath = "./file2.zip"#"送りたいファイルのパス/ファイル２"
     return send_file(
-        filename,
+        filepath,
         as_attachment=True
     )
 
