@@ -9,7 +9,7 @@ def index():
 
 
 @app.route("/export/file1")
-def export_action_raspi():
+def export_action_file1():
     filepath = "./file1.zip"#"送りたいファイルのパス/ファイル１"
     return send_file(
         filepath,
@@ -17,7 +17,7 @@ def export_action_raspi():
     )
 
 @app.route("/export/file2")
-def export_action_pc():
+def export_action__file2():
     filepath = "./file2.zip"#"送りたいファイルのパス/ファイル２"
     return send_file(
         filepath,
